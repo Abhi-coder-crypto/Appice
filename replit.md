@@ -1,4 +1,4 @@
-# Appice Alternative - Customer Engagement Platform
+# A2S2PR - Customer Engagement Platform
 
 ## Overview
 

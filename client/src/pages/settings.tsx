@@ -234,7 +234,7 @@ export default function Settings() {
                       id="sender-id"
                       value={smsSettings.senderId}
                       onChange={(e) => setSmsSettings(s => ({ ...s, senderId: e.target.value }))}
-                      placeholder="APPICE"
+                      placeholder="A2S2PR"
                       className="mt-1.5"
                       data-testid="input-sender-id"
                     />

@@ -111,7 +111,7 @@ export default function UserManagement() {
             <div>
               <CardTitle>Team Members</CardTitle>
               <p className="text-sm text-muted-foreground mt-1">
-                Manage who has access to your Appice dashboard
+                Manage who has access to your A2S2PR dashboard
               </p>
             </div>
             <Button onClick={() => setShowAddModal(true)} data-testid="button-add-member">

@@ -1,7 +1,7 @@
-# Design Guidelines for Appice Alternative Dashboard
+# Design Guidelines for A2S2PR Dashboard
 
 ## Design Approach
-**Reference-Based Approach**: This is an enterprise analytics and customer engagement platform. The design will draw from modern SaaS dashboard patterns similar to Appice, Mixpanel, Amplitude, and Segment - prioritizing data clarity, functional hierarchy, and professional aesthetics.
+**Reference-Based Approach**: This is an enterprise analytics and customer engagement platform. The design will draw from modern SaaS dashboard patterns similar to Mixpanel, Amplitude, and Segment - prioritizing data clarity, functional hierarchy, and professional aesthetics.
 
 ## Core Design Principles
 
