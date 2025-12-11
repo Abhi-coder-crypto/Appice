@@ -33,68 +33,60 @@ function MetricCard({
   const isPositive = change >= 0;
 
   return (
-    <Card className="overflow-visible" data-testid={`metric-card-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+    <Card className="overflow-visible border-l-4 border-l-primary" data-testid={`metric-card-${title.toLowerCase().replace(/\s+/g, '-')}`}>
       <CardContent className="p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2">{title}</p>
-            <div className="flex items-center gap-3 mb-2">
+            <div className="flex items-center gap-2 mb-3">
+              <div className={`p-2 rounded-lg bg-primary/10 ${iconColor}`}>
+                <Icon className="h-4 w-4" />
+              </div>
+              <p className="text-sm font-medium text-muted-foreground">{title}</p>
+            </div>
+            <div className="flex items-baseline gap-3 mb-2">
               <span className="text-3xl font-bold text-foreground">{typeof value === 'number' ? value.toLocaleString() : value}</span>
-              <div className={`flex items-center gap-1 text-xs font-medium px-1.5 py-0.5 rounded ${iconColor}`}>
-                <svg className="w-8 h-4" viewBox="0 0 40 20">
-                  <path d="M0 15 Q10 5 20 10 Q30 15 40 5" fill="none" stroke="currentColor" strokeWidth="2" />
-                </svg>
+              <div className={`flex items-center gap-1 text-sm font-medium ${isPositive ? "text-emerald-600" : "text-rose-600"}`}>
+                {isPositive ? (
+                  <TrendingUp className="h-4 w-4" />
+                ) : (
+                  <TrendingDown className="h-4 w-4" />
+                )}
+                <span>{isPositive ? "+" : ""}{change}%</span>
               </div>
             </div>
-            <div className="flex items-center gap-1.5 text-xs">
-              {isPositive ? (
-                <TrendingUp className="h-3 w-3 text-green-500" />
-              ) : (
-                <TrendingDown className="h-3 w-3 text-red-500" />
-              )}
-              <span className={isPositive ? "text-green-500" : "text-red-500"}>
-                {isPositive ? "+" : ""}{change}%
-              </span>
-              <span className="text-muted-foreground">w.r.t. {period}</span>
-            </div>
+            <p className="text-xs text-muted-foreground">Compared to {period}</p>
           </div>
         </div>
         
         {breakdown && (
-          <div className="mt-4 space-y-1.5">
+          <div className="mt-4 pt-4 border-t border-border space-y-2">
             {breakdown.map((item, idx) => (
-              <div key={idx} className="flex items-center justify-between text-xs">
+              <div key={idx} className="flex items-center justify-between text-sm">
                 <div className="flex items-center gap-2">
-                  {item.platform === "Android" && <Smartphone className="h-3 w-3 text-green-500" />}
-                  {item.platform === "iOS" && <Apple className="h-3 w-3 text-gray-500" />}
-                  {item.platform === "Web" && <Globe className="h-3 w-3 text-blue-500" />}
+                  {item.platform === "Android" && <Smartphone className="h-4 w-4 text-emerald-500" />}
+                  {item.platform === "iOS" && <Apple className="h-4 w-4 text-slate-500" />}
+                  {item.platform === "Web" && <Globe className="h-4 w-4 text-orange-500" />}
                   <span className="text-muted-foreground">{item.platform}</span>
                 </div>
-                <span className="font-medium">{item.count}</span>
+                <span className="font-semibold">{item.count}</span>
               </div>
             ))}
           </div>
         )}
         
         {metrics && (
-          <div className="mt-4 space-y-1.5">
+          <div className="mt-4 pt-4 border-t border-border space-y-2">
             {metrics.map((item, idx) => (
-              <div key={idx} className="flex items-center justify-between text-xs">
-                <span className="text-muted-foreground flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <div key={idx} className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
                   {item.label}
                 </span>
-                <span className="font-medium">{item.value}</span>
+                <span className="font-semibold">{item.value}</span>
               </div>
             ))}
           </div>
         )}
-        
-        <Button variant="link" className="mt-3 p-0 h-auto text-xs text-primary" data-testid={`button-view-details-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-          <Download className="h-3 w-3 mr-1" />
-          View Details
-          <ExternalLink className="h-3 w-3 ml-1" />
-        </Button>
       </CardContent>
     </Card>
   );
@@ -163,7 +155,7 @@ function TopEventsChart() {
                 ))}
               </TableBody>
             </Table>
-            <Button variant="link" className="mt-2 p-0 h-auto text-xs text-primary" data-testid="button-view-event-details">
+            <Button variant="ghost" className="mt-2 p-0 h-auto text-xs text-primary hover:bg-transparent" data-testid="button-view-event-details">
               View Details
             </Button>
           </div>

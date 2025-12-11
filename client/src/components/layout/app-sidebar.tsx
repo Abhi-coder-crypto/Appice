@@ -128,12 +128,17 @@ export function AppSidebar() {
   };
 
   return (
-    <Sidebar className="border-r border-sidebar-border">
-      <SidebarHeader className="p-4 border-b border-sidebar-border">
+    <Sidebar className="border-r border-sidebar-border shadow-sm">
+      <SidebarHeader className="p-4 border-b border-sidebar-border bg-gradient-to-r from-primary/5 to-transparent">
         <Link href="/">
-          <span className="text-2xl font-bold text-primary cursor-pointer" data-testid="logo-nexgine">
-            nexgine
-          </span>
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-sm">N</span>
+            </div>
+            <span className="text-xl font-bold text-foreground cursor-pointer" data-testid="logo-nexgine">
+              nexgine
+            </span>
+          </div>
         </Link>
       </SidebarHeader>
       <SidebarContent className="px-2 py-4">
