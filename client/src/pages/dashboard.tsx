@@ -309,7 +309,7 @@ function InstallCohort() {
 export default function Dashboard() {
   return (
     <div className="flex flex-col h-full">
-      <Header title="BOI-UA-UAT" showPlatformFilter showDateFilter />
+      <Header title="Demo App" showPlatformFilter showDateFilter />
       
       <div className="flex-1 overflow-auto p-6 space-y-6">
         {/* Metrics Cards */}
