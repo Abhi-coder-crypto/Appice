@@ -234,7 +234,7 @@ export default function Settings() {
                       id="sender-id"
                       value={smsSettings.senderId}
                       onChange={(e) => setSmsSettings(s => ({ ...s, senderId: e.target.value }))}
-                      placeholder="A2S2PR"
+                      placeholder="NEXGINE"
                       className="mt-1.5"
                       data-testid="input-sender-id"
                     />

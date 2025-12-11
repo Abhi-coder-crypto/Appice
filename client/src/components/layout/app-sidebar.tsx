@@ -131,8 +131,8 @@ export function AppSidebar() {
     <Sidebar className="border-r border-sidebar-border">
       <SidebarHeader className="p-4 border-b border-sidebar-border">
         <Link href="/">
-          <span className="text-2xl font-bold text-primary cursor-pointer" data-testid="logo-a2s2pr">
-            A2S2PR
+          <span className="text-2xl font-bold text-primary cursor-pointer" data-testid="logo-nexgine">
+            nexgine
           </span>
         </Link>
       </SidebarHeader>
