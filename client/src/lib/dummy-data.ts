@@ -204,7 +204,7 @@ export const profileAttributes: ProfileAttribute[] = [
 export const apps: App[] = [
   {
     id: "1",
-    name: "Test App",
+    name: "Demo App",
     platforms: {
       android: { active: 20, inactive: "NA" },
       ios: { active: 3, inactive: "NA" },
@@ -213,7 +213,7 @@ export const apps: App[] = [
   },
   {
     id: "2",
-    name: "BOI-UA-UAT",
+    name: "Sample Project",
     platforms: {
       android: { active: 3367, inactive: "NA" },
       ios: { active: 1212, inactive: "NA" },
